@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    this file holds the test setup and teardown steps
 Library    SeleniumLibrary
+Library    ../Library/webdriversync.py
 
 *** Keywords ***
 Start Test Suite
@@ -8,7 +9,16 @@ Start Test Suite
 
 Begin Test
     [Arguments]     ${browser}      ${workdayUrl}
-    open browser    about:blank     ${browser}
+#    open browser    about:blank     ${browser}
+    IF    "${browser}"=="chrome"
+        ${webdriver_path}=   webdriversync.get chromedriver
+    ELSE IF    "${browser}"=="edge"
+        ${webdriver_path}=   webdriversync.get edgedriver
+    ELSE
+        log    Stay tuned! More browser support coming soon.
+    END
+#    create webdriver    chrome    executable_path=${webdriver_path}
+    open browser    about:blank     browser=${browser}    executable_path=${webdriver_path}
     maximize browser window
     go to    ${workdayUrl}
 

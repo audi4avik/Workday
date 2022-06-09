@@ -3,7 +3,7 @@ Documentation    This file holds all the variables related to the test run
 Library    ExcelLibrary
 
 *** Variables ***
-${browser} =        chrome
+${browser} =        edge
 ${workdayUrl} =     https://wd5.myworkday.com/ibm/d/home.htmld
 
 *** Keywords ***

@@ -44,6 +44,6 @@ Login To Workday
     IF    ${proceedLogin}==False
         fail    Please check the Input Data for ID/Password issues.
     ELSE
-        wait until element is visible    ${homeHeading}     timeout=20s
+        wait until element is visible    ${homeHeading}     timeout=30s
         log    Login to Workday is successful
     END
