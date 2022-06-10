@@ -43,9 +43,9 @@ C:\Users\ibmadmin\AppData\Local\Programs\Python\<Python310>\DLLs
 
 ## Contact
 
-Your Name - [@your_linkedin](https://twitter.com/your_username) - email@example.com
+Avik Datta | [LinkedIn](https://www.linkedin.com/in/avikdatta/) | avikdatta2010@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/audi4avik/Workday.git](https://github.com/audi4avik/Workday.git)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
