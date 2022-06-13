@@ -1,6 +1,6 @@
 # **Workday Automation**
 
-#### Powered by Robot Framework _ [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+#### Powered by Robot Framework _ [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](#)
 ##### Developed by Avik Datta
 ..
 

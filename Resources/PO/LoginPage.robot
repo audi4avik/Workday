@@ -20,7 +20,7 @@ Login To Workday
     wait for condition    return document.readyState == "complete"
     # Check for Workday Downtime
     ${proceedFlag}    run keyword and return status   element should not be visible    ${wdDownTime}
-    IF    ${proceedFlag}==False
+    IF    ${proceedFlag}== False
         fail    Workday maintenance is going on. Please try after sometime.
     ELSE
         wait until element is visible    ${pageTitle}
@@ -41,7 +41,7 @@ Login To Workday
     ${proceedLogin}   run keyword and return status   page should not contain element    ${errorMsg}
 
     # Handle situation based on flag
-    IF    ${proceedLogin}==False
+    IF    ${proceedLogin}== False
         fail    Please check the Input Data for ID/Password issues.
     ELSE
         wait until element is visible    ${homeHeading}     timeout=30s

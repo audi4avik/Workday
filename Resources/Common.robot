@@ -10,9 +10,9 @@ Start Test Suite
 Begin Test
     [Arguments]     ${browser}      ${workdayUrl}
 #    open browser    about:blank     ${browser}
-    IF    "${browser}"=="chrome"
+    IF    "${browser}"== "chrome"
         ${webdriver_path}=   webdriversync.get chromedriver
-    ELSE IF    "${browser}"=="edge"
+    ELSE IF    "${browser}"== "edge"
         ${webdriver_path}=   webdriversync.get edgedriver
     ELSE
         log    Stay tuned! More browser support coming soon.

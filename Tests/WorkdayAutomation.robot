@@ -25,7 +25,10 @@ TC_03 Retrieve Remaining Time Off Balnace
     [Tags]    balance
     WorkdayKeywords.Retrieve Current Time Off Balance
 
-#TC_04 Automate Submission Of Time Off
+TC_04 Automate Record Of Absence
+    [Documentation]    This is TC_04 to request different types of time off
+    [Tags]    toff
+    WorkdayKeywords.Record Vacation Or Time Off
 
 #ToDo - Integrate Script with jenkins for Every Monday Run
 #ToDo - Check for ChromeDriver mismtach before starting the test 
