@@ -37,7 +37,7 @@ Record Vacation Or Time Off
     Proceed To Time & Absence Dashboard
     Proceed To Vacation And Time Off Page
     Record Absence Days In Calendar
-#    Submit And Verify Records
+    Submit And Verify Absence Data
 
 
 # Lower level Keywords for PO pages
@@ -88,9 +88,9 @@ Proceed To Vacation And Time Off Page
 Record Absence Days In Calendar
     AbsenceCalendarPage.Select Date Or Date Range And Proceed
 
-Submit And Verify Records
+Submit And Verify Absence Data
     AbsenceCalendarPage.Request Absence For Approval
-#    AbsenceCalendarPage.Confirm Absence Data
+    AbsenceCalendarPage.Confirm And Submit Absence Data
 
 
     
