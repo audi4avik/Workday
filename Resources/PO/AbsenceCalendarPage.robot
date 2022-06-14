@@ -28,7 +28,8 @@ Select Date Or Date Range And Proceed
 
 # Absence request for Signle day keywords
 Request Absence For One Day
-    ${absenceMonth}     remove string using regexp     ${absenceData}[1]       \\s.\d\b.\s
+    # Try regex at https://pythex.org/ | Add extra '\' before any special char pattern matching
+    ${absenceMonth}     remove string using regexp     ${absenceData}[1]       \\s\\d+\\W
     ${displayedMonth}   get text            ${calendarMonth}
     run keyword if    '${displayedMonth}' == '${absenceMonth}'       Select Date From Calendar
     ...     ELSE      Select Month And Then Select Date
