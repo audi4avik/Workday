@@ -57,6 +57,7 @@ Request Absence For Approval
     # Automating through the elements of Pop Up box: Absence Type
     wait until element is visible    ${absTypePopUpHeader}      timeout=5s
     element should contain      ${cnfAbsDate}      ${absenceData}[1]      ignore_case=True
+    set selenium speed    0.3 seconds
     click element    ${absTypeSearch}
     wait until element is visible    ${typeVacation&Sick}
     click element    ${typeVacation&Sick}
@@ -64,9 +65,7 @@ Request Absence For Approval
     element text should be    ${multiSelectHeader}      Vacation & Sick
     click element    ${multiSelectOption}\[contains(text(), '${absenceData}[3]')]
     click element    ${absTypeNxtBtn}
-    sleep    2s
-
-Confirm And Submit Absence Data
+    set selenium speed    0
 
 
 

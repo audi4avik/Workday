@@ -9,6 +9,7 @@ Resource    ./PO/TimeReviewPage.robot
 Resource    ./PO/TimeSubmitPage.robot
 Resource    ./PO/TimeOffBalancePage.robot
 Resource    ./PO/AbsenceCalendarPage.robot
+Resource    ./PO/RequestAbsenceFinalPage.robot
 
 *** Keywords ***
 # high level keywords
@@ -90,7 +91,7 @@ Record Absence Days In Calendar
 
 Submit And Verify Absence Data
     AbsenceCalendarPage.Request Absence For Approval
-    AbsenceCalendarPage.Confirm And Submit Absence Data
+    RequestAbsenceFinalPage.Confirm And Submit Absence Data
 
 
     
