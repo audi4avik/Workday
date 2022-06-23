@@ -41,7 +41,7 @@ Login To Workday
     ${proceedLogin}   run keyword and return status   page should not contain element    ${errorMsg}
 
     # Handle situation based on flag
-    IF    ${proceedLogin}== False
+    IF    ${proceedLogin} == False
         fail    Please check the Input Data for ID/Password issues.
     ELSE
         wait until element is visible    ${homeHeading}     timeout=30s
