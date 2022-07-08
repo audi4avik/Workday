@@ -9,6 +9,8 @@
 - Shift Claim for Current Week
 - Shift Claim for Past Week
 - Retrieve Vacation Balance
+- Request Absence for single day
+- Request Absence for multiple days
 
 Markdown is a lightweight markup language based on the formatting conventions
 that people naturally use in email.
