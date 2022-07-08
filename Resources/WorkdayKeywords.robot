@@ -91,7 +91,7 @@ Record Absence Days In Calendar
 
 Submit And Verify Absence Data
     AbsenceCalendarPage.Request Absence For Approval
-#    RequestAbsenceFinalPage.Confirm And Submit Absence Data
+    RequestAbsenceFinalPage.Confirm And Submit Absence Data
 
 
     
