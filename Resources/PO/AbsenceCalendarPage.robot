@@ -13,6 +13,7 @@ ${datePickrYear} =      css=span[data-automation-id='monthPickerSpinnerLabel']
 ${datePickrMonth} =     css=div[data-automation-id='monthPickerTileLabel']
 ${datePickrNxtYrBtn} =  css=button[title='Next Year']
 ${dateRangeBtn} =       //button[@title='Select Date Range']
+${dateRangePopUpHeader} =   css=h2>span[title='Select Date Range']
 ${reqAbsenceBtn} =      //button//span[contains(@title,'Request Absence')]
 ${absTypePopUpHeader} =       //div[contains(@class,'wd-popup-content')]//h2/span[@title='Select Absence Type']
 ${cnfAbsDate} =         //div[contains(@class,'wd-popup-content')]//div[@data-automation-id='textView']
@@ -43,11 +44,11 @@ Select Date Or Date Range And Proceed
     set test variable    ${absenceYear}
     set test variable    ${absenceMoYr}
 
-    run keyword if    ${absenceData}[0] == 1      Request Absence For One Day
-    ...    ELSE IF    ${absenceData}[0] > 1       Request Absence With Date Range
+    run keyword if    '${absenceData}[0]' == 'Single Day'      Request Absence For One Day
+    ...    ELSE IF    '${absenceData}[0]' == 'Multiple Days'       Request Absence With Date Range
     ...    ELSE       log    All work and no play makes a very dull employee!
 
-# Absence request for Single day keywords
+# Keywords for requesting single day of absence
 Request Absence For One Day
     ${displayedMonth}   get text      ${calendarMonth}
     run keyword if    '${displayedMonth}' == '${absenceMoYr}'       Select Date From Calendar
@@ -64,14 +65,14 @@ Select Month And Then Select Date
     set selenium speed    0.3
     wait until element is visible    ${datePickrDiv}
     ${calendarYear}     get text    ${datePickrYear}
-
+    # Absence requested in current year
     IF   ${absenceYear} == ${calendarYear}
          click element      ${datePickrMonth}\[title='${absenceMonth}']
          wait until element contains    ${calendarMonth}       text=${absenceMoYr}      timeout=10 seconds
          execute javascript    window.scrollTo(0, document.body.scrollHeight)
          scroll element into view    //div[contains(@aria-label,'${absenceData}[1]')]
          click element    //div[contains(@aria-label,'${absenceData}[1]')]
-
+    # Absence requested for next year
     ELSE IF    ${absenceYear} == ${calendarYear}+1
         click element    ${datePickrNxtYrBtn}
         wait until element contains    ${datePickrYear}      text=${absenceYear}
@@ -82,11 +83,13 @@ Select Month And Then Select Date
         click element    //div[contains(@aria-label,'${absenceData}[1]')]
 
     ELSE
-       log    Invalid input for absence date
+       log    Invalid input for absence date. Please check vacation data "/Input/UserDetails.xlsx"
     END
 
-# Absence request for multiple day keywords
+# Keywords for requesting multiple days of absence
 Request Absence With date Range
+    click element    ${dateRangeBtn}
+    wait until element is visible   ${dateRangePopUpHeader}
 
 
 Request Absence For Approval
