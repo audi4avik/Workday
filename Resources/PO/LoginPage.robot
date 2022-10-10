@@ -13,7 +13,7 @@ ${inputPwd} =       id=password-input
 ${loginBtn} =       //button[@id='login-button']
 ${errorMsg} =       //div[@id='login-error-message']/p[text()='Your w3id or password was entered incorrectly.']
 ${wdDownTime} =     //h2[contains(text(),'Workday is currently unavailable')]
-${homeHeading} =    //h1[@data-automation-id='landingPageWelcomeCardHeading']
+${homeHeading} =    //h1[@data-automation-id='pex-welcome-greeting']
 
 *** Keywords ***
 Login To Workday
